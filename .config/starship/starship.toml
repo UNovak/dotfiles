@@ -1,0 +1,227 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+$sudo\
+$username\
+$hostname\
+$localip\
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+$fill\
+$bun\
+$nodejs\
+$docker_context\
+$deno\
+$golang\
+$java\
+$python\
+$ruby\
+$rust\
+$solidity\
+$swift\
+$dart\
+$container\
+$line_break\
+$time\
+$character\
+"""
+
+right_format = """
+$cmd_duration\
+"""
+
+[fill]
+symbol = " "
+
+[palettes.tokyo]
+bg = '#24283b'
+fg = '#a9b1d6'
+black = '#414868'
+green = '#73daca'
+comment = '#565f89'
+orange = '#ff9e64'
+cyan = '#7dcfff'
+blue = '#7aa2f7'
+purple ='#bb9af7'
+text = '#9aa5ce'
+red = '#f7768e'
+yellow = '#e0af68'
+
+palette = 'tokyo'
+
+[sudo]
+style = 'green'
+symbol = ' '
+format = '[$symbol]($style)'
+
+[username]
+style_user = 'blue'
+style_root = 'red'
+format = '[$user]($style) '
+show_always = true
+
+[hostname]
+ssh_only = true
+ssh_symbol = ' '
+style = 'blue'
+trim_at = ''
+format = '$ssh_symbol[@$hostname]($style)'
+
+[localip]
+ssh_only = true
+style = 'purple'
+format = '[$localipv4]($style) '
+
+[directory]
+truncation_length = 5
+style = 'purple'
+read_only = ''
+read_only_style = ''
+truncation_symbol = '../'
+home_symbol = '~'
+format = '[$path]($style)[$read_only]($read_only_style) '
+
+[directory.substitutions]
+'src/components' = 'components'
+
+[git_branch]
+symbol = ' '
+style = 'cyan'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "red bold"
+stashed = "!"
+ahead = "⇡"
+behind = "⇣"
+up_to_date = "✓"
+diverged = "⇕"
+conflicted = "="
+deleted = ""
+renamed = ""
+modified = "!"
+staged = '[++\($count\)](green)'
+untracked = "?"
+typechanged = ""
+ignore_submodules = false
+disabled = false
+
+[character]
+success_symbol = '[❯](green)'
+error_symbol = '[❯](red)'
+
+[bun]
+symbol = '🍞 '
+style = 'comment'
+detect_folders = []
+detect_files = [ 'bun.lockb', 'bunfig.toml' ]
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+[nodejs]
+symbol = '󰎙 '
+style = 'comment'
+detect_folders = ['node_modules']
+detect_files = [ '!bun.lockb', '!bunfig.toml', 'package.json', '.node-version' ]
+detect_extensions = [ 'js', 'mjs', 'cjs', 'ts', 'mts', 'cts' ]
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+[cmd_duration]
+min_time = 1000
+style = 'yellow'
+format = '[< $duration >]($style) '
+
+[container]
+symbol = '📦 '
+style = 'comment'
+format = '[($symbol \[$name\)] ]($style) '
+
+[docker_context]
+symbol = '🐳 '
+style = 'comment'
+detect_folders = []
+detect_files = [ 'docker-compose.yml', 'docker-compose.yaml', 'Dockerfile' ]
+format = '[$symbol($context )]($style) '
+
+[deno]
+symbol = '🦕 '
+style = 'comment'
+detect_folders = []
+detect_files = ['deno.json', 'deno.jsonc', 'mod.ts', 'mod.js', 'deps.ts', 'deps.js']
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+[golang]
+symbol = ' '
+style = 'comment'
+detect_folders = []
+detect_extensions = ['go']
+detect_files = [ 'go.mod', 'go.sum', 'go.work', 'glide.yaml', 'Gopkg.yml', 'Gopkg.lock', '.go-version' ]
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+
+[java]
+symbol = '☕️ '
+style = 'comment'
+detect_folders = []
+detect_extensions = [ 'java', 'class', 'gradle', 'jar', 'cljs', 'cljc' ]
+detect_files = [ 'pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc' ]
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+[ruby]
+symbol = '💎 '
+style = 'comment'
+detect_extensions = [ 'rb' ]
+detect_variables = [ 'RUBY_VERSION', 'RBENV_VERSION' ]
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+[rust]
+symbol = '⚙️ '
+style = 'comment'
+detect_extensions = [ 'rs' ]
+detect_files = [ 'Cargo.toml' ]
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+[solidity]
+symbol = ' '
+style = 'comment'
+detect_extensions = [ 'sol' ]
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+[swift]
+symbol = ' '
+style = 'comment'
+detect_extensions = [ 'rswift' ]
+detect_files = [ 'Package.swift' ]
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+[dart]
+symbol = '🎯 '
+style = 'comment'
+detect_extensions = [ 'dart' ]
+detect_files = [ 'pubspec.yaml', 'pubspec.yml', 'pubspec.lock' ]
+detect_folders = [ '.dart_tool' ]
+version_format = 'v${raw}'
+format = '[$symbol($version )]($style) '
+
+[time]
+disabled = true
+style = "comment"
+format = '[ $time]($style) '
+time_format = '%T'
+utc_time_offset = 'local'
+
+
+
