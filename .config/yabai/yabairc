@@ -1,0 +1,96 @@
+# === === ===
+# scripting addition
+# === === ===
+
+# info - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# === === ===
+# Rules
+# === === ===
+
+yabai -m signal --add event=application_front_switched action="yabai -m window --sub-layer normal"
+
+# refocus if app is closed
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+# Turn off tiling by default for all apps
+yabai -m rule --add app=".*" manage=off
+
+# Turn on tiling for specific apps
+yabai -m rule --add app="^Arc$" manage=on
+yabai -m rule --add app="^Code$" manage=on
+yabai -m rule --add app="^Zed$" manage=on
+yabai -m rule --add app="^IntelliJ IDEA$" manage=on
+yabai -m rule --add app="^Safari$" manage=on
+yabai -m rule --add app="^Figma$" manage=on
+yabai -m rule --add app="^Obsidian$" manage=on
+yabai -m rule --add app="^Miro$" manage=on
+yabai -m rule --add app="^WezTerm$" manage=on
+
+# float hides if managed app in front is focused
+yabai -m rule --add app=".*" sub-layer=normal
+
+# float unresizable
+yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | /opt/homebrew/bin/jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
+
+# === === ===
+# Configs
+# === === ===
+
+# layout
+yabai -m config layout stack
+yabai -m config window_placement first_child
+yabai -m config auto_balance on
+yabai -m config insert_feedback_color 0x7AA2F7FF
+
+# padding
+yabai -m config top_padding 8
+yabai -m config bottom_padding 8
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 8
+
+# window shadow & opacity
+yabai -m config window_shadow float
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 0.99
+yabai -m config normal_window_opacity 0.88
+
+# mouse
+yabai -m config mouse_follows_focus on
+yabai -m config mouse_modifier ctrl
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+yabai -m config mouse_drop_action swap
+
+# === === ===
+# debugging
+# === === ===
+
+# view the last lines of the error log : tail -f /tmp/yabai_$USER.err.log
+# view the last lines of the debug log : tail -f /tmp/yabai_$USER.out.log
+
+# # view the event signals received by yabai
+# yabai -m signal --add event=window_created action="echo window_created | osascript -l JavaScript"
+
+# # log everything to a file
+# yabai -m signal --add event=window_created action="echo window_created >> /tmp/yabai.log"
+# yabai -m signal --add event=window_destroyed action="echo window_destroyed >> /tmp/yabai.log"
+# yabai -m signal --add event=application_launched action="echo application_launched >> /tmp/yabai.log"
+# yabai -m signal --add event=application_terminated action="echo application_terminated >> /tmp/yabai.log"
+# yabai -m signal --add event=window_focused action="echo window_focused >> /tmp/yabai.log"
+# yabai -m signal --add event=window_blurred action="echo window_blurred >> /tmp/yabai.log"
+# yabai -m signal --add event=mouse_entered action="echo mouse_entered >> /tmp/yabai.log"
+# yabai -m signal --add event=mouse_exited action="echo mouse_exited >> /tmp/yabai.log"
+# yabai -m signal --add event=space_changed action="echo space_changed >> /tmp/yabai.log"
+# yabai -m signal --add event=display_changed action="echo display_changed >> /tmp/yabai.log"
+# yabai -m signal --add event=display_added action="echo display_added >> /tmp/yabai.log"
+# yabai -m signal --add event=display_removed action="echo display_removed >> /tmp/yabai.log"
+# yabai -m signal --add event=mission_control_enter action="echo mission_control_enter >> /tmp/yabai.log"
+# yabai -m signal --add event=mission_control_exit action="echo mission_control_exit >> /tmp/yabai.log"
+# yabai -m signal --add event=bar_refresh action="echo bar_refresh >> /tmp/yabai.log"
+# yabai -m signal --add event=window_resized action="echo window_resized >> /tmp/yabai.log"
+# yabai -m signal --add event=window_moved action="echo window_moved >> /tmp/yabai.log"
