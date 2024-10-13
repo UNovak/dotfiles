@@ -15,6 +15,8 @@ yabai -m signal --add event=application_front_switched action="yabai -m window -
 # refocus if app is closed
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=window_destroyed action="/Users/urbannovak/.config/yabai/layout.zsh"
+
 
 # Turn off tiling by default for all apps
 yabai -m rule --add app=".*" manage=off
