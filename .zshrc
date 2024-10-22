@@ -44,6 +44,8 @@ export BUN_INSTALL=$HOME/.bun
 export PATH=$BUN_INSTALL/bin:$PATH
 [ -s "/Users/urbannovak/.bun/_bun" ] && source "/Users/urbannovak/.bun/_bun"
 
+# Docker CLI
+export PATH="$HOME/.docker/bin:$PATH"
 
 # starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
