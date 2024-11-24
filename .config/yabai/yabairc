@@ -31,6 +31,7 @@ yabai -m rule --add app="^Figma$" manage=on
 yabai -m rule --add app="^Obsidian$" manage=on
 yabai -m rule --add app="^Miro$" manage=on
 yabai -m rule --add app="^WezTerm$" manage=on
+yabai -m rule --add app="^TradingView$" manage=on
 
 # float hides if managed app in front is focused
 yabai -m rule --add app=".*" sub-layer=normal
