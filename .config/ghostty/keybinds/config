@@ -1,0 +1,73 @@
+# === === ===
+# Ghostty terminal keybindings config
+# === === ===
+
+# format: leader>key=action
+
+# unbind all defaults
+keybind = clear
+
+# rebind defaults
+keybind = super+alt+i=inspector:toggle
+keybind = super+shift+comma=reload_config
+keybind = super+k>super+k=clear_screen
+keybind = global:f6=toggle_quick_terminal
+
+# splits
+keybind = super+k>v=new_split:right
+keybind = super+k>h=new_split:down
+keybind = super+k>left=goto_split:left
+keybind = super+k>down=goto_split:down
+keybind = super+k>up=goto_split:up
+keybind = super+k>right=goto_split:right
+keybind = super+k>equal=equalize_splits
+
+keybind = super+left_bracket=goto_split:previous
+keybind = super+right_bracket=goto_split:next
+keybind = shift+escape=toggle_split_zoom
+
+
+# windows|tabs
+keybind = super+n=new_window
+keybind = super+w=close_surface
+keybind = super+shift+w=close_all_windows
+keybind = super+q=quit
+
+# copy & paste
+keybind = super+a=select_all
+keybind = super+c=copy_to_clipboard
+keybind = super+shift+v=paste_from_selection
+keybind = super+v=paste_from_clipboard
+
+# scroll
+keybind = home=scroll_to_top
+keybind = end=scroll_to_bottom
+keybind = page_up=scroll_page_up
+keybind = page_down=scroll_page_down
+
+# moving inside prompt
+keybind = super+right=text:\x05
+keybind = super+left=text:\x01
+keybind = alt+right=esc:f
+keybind = alt+left=esc:b
+keybind = super+down=jump_to_prompt:1
+keybind = super+shift+down=jump_to_prompt:1
+keybind = super+shift+up=jump_to_prompt:-1
+keybind = super+up=jump_to_prompt:-1
+
+keybind = super+backspace=text:\x15
+
+# adjust font size
+keybind = super+zero=reset_font_size
+keybind = super+minus=decrease_font_size:1
+keybind = super+equal=increase_font_size:1
+
+# selection
+keybind = shift+up=adjust_selection:up
+keybind = shift+down=adjust_selection:down
+keybind = shift+right=adjust_selection:right
+keybind = shift+left=adjust_selection:left
+keybind = shift+home=adjust_selection:home
+keybind = shift+end=adjust_selection:end
+keybind = shift+page_up=adjust_selection:page_up
+keybind = shift+page_down=adjust_selection:page_down

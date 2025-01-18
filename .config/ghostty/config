@@ -1,0 +1,42 @@
+# === === ===
+# Ghostty terminal config
+# === === ===
+
+# === === theme === ===
+# theme = dark:tokyonight_night,light:tokyonight
+# theme = dark:catppuccin-mocha,light:catppuccin-macchiato
+theme = sandstorm_dark
+
+# === === font === ===
+font-family = JetBrainsMono NFM Regular
+font-family-bold = JetBrainsMono NFM Bold
+font-family-italic = JetBrainsMono NFM Italic
+font-family-bold-italic = JetBrainsMono NFM Bold Italic
+
+# === === looks === ===
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = hidden
+
+# bg
+background-opacity = 1.0
+background-blur-radius = 250
+auto-update-channel = tip
+
+cursor-style = block
+shell-integration-features = no-cursor
+
+# padding
+window-padding-x = 16
+window-padding-y = 16
+window-padding-balance = true
+
+# === === behaviour === ===
+quit-after-last-window-closed = false
+mouse-hide-while-typing = true
+confirm-close-surface = false
+shell-integration = zsh
+title-report = true
+macos-option-as-alt = true
+
+# source keybindings
+config-file = keybinds/config
