@@ -50,7 +50,8 @@ lcmd + lalt + lctrl - a : yabai -m space --focus 1
 lcmd + lalt + lctrl - s : yabai -m space --focus 2
 lcmd + lalt + lctrl - d : yabai -m space --focus 3
 lcmd + lalt + lctrl - f : yabai -m space --focus 4
-lcmd + lalt + lctrl - g : yabai -m space --focus 4
+lcmd + lalt + lctrl - g : yabai -m space --focus 5
+lcmd + lalt + lctrl - h : yabai -m space --focus 6
 
 # set layout for active space
 lcmd + lalt + lctrl - q : /Users/urbannovak/.config/skhd/scripts/layout_toggle.zsh
