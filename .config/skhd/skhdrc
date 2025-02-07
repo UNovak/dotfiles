@@ -3,7 +3,7 @@
 # === === ===
 
 # Balance all managed windows
-lcmd + lalt + lctrl - e  : yabai -m space --balance
+ctrl + alt - 0x18 : yabai -m space --balance
 
 # toggle float for active window
 lcmd + lalt + lctrl - tab : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2;
@@ -61,8 +61,8 @@ ctrl - left : yabai -m space --focus prev || yabai -m space --focus last
 # === === ===
 
 # restart | stop yabai & skhd
-ctrl + lalt - r : yabai --restart-service; skhd --restart-service;
-ctrl + lalt - q : yabai --stop-service; skhd --stop-service;
+ctrl + alt - escape : yabai --restart-service;
+ctrl + alt + shift - escape : yabai --stop-service; skhd --stop-service;
 
 # keycodes
     # 0x1E = ]
