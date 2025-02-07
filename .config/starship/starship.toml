@@ -37,21 +37,21 @@ $cmd_duration\
 [fill]
 symbol = " "
 
-[palettes.tokyo]
-bg = '#24283b'
-fg = '#a9b1d6'
-black = '#414868'
-green = '#73daca'
-comment = '#565f89'
-orange = '#ff9e64'
-cyan = '#7dcfff'
-blue = '#7aa2f7'
-purple ='#bb9af7'
-text = '#9aa5ce'
-red = '#f7768e'
-yellow = '#e0af68'
+# [palettes.tokyo]
+# bg = '#24283b'
+# fg = '#a9b1d6'
+# black = '#414868'
+# green = '#73daca'
+# comment = '#565f89'
+# orange = '#ff9e64'
+# cyan = '#7dcfff'
+# blue = '#7aa2f7'
+# purple ='#bb9af7'
+# text = '#9aa5ce'
+# red = '#f7768e'
+# yellow = '#e0af68'
 
-palette = 'tokyo'
+# palette = 'tokyo'
 
 [sudo]
 style = 'green'
@@ -95,15 +95,15 @@ format = '[$symbol$branch(:$remote_branch)]($style) '
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "red bold"
+style = "red"
 stashed = "!"
 ahead = "⇡"
 behind = "⇣"
 up_to_date = "✓"
 diverged = "⇕"
 conflicted = "="
-deleted = ""
-renamed = ""
+deleted = "D"
+renamed = "R"
 modified = "!"
 staged = '[++\($count\)](green)'
 untracked = "?"
@@ -222,6 +222,3 @@ style = "comment"
 format = '[ $time]($style) '
 time_format = '%T'
 utc_time_offset = 'local'
-
-
-
