@@ -20,4 +20,4 @@ else
 fi
 
 # focus the first window on space
-yabai -m window --focus $window_id
+yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
