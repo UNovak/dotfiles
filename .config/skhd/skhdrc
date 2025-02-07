@@ -8,10 +8,14 @@ ctrl + alt - 0x18 : yabai -m space --balance
 # toggle float for active window
 lcmd + lalt + lctrl - tab : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2;
 
-# fullscreen except in zed
-shift - escape [
-  * : yabai -m window --toggle zoom-fullscreen;
+# right shift + escape -> zed | ghostty fullscreen inside current window
+# left shift + escape -> fullscreen for all apps
+rshift - escape : yabai -m window --toggle zoom-fullscreen
+
+lshift - escape [
+  * : yabai -m window --toggle zoom-parent
   "zed" ~
+  "ghostty" ~
 ]
 
 # cycle focus
