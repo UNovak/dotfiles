@@ -24,6 +24,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
     # autocomplete
     source ~/.config/zsh-autosuggestions/zsh-autosuggestions.zsh
+    fpath=(~/.zsh/completions $fpath)
 
 
 # brew
@@ -63,6 +64,9 @@ source <(volta completions zsh)
 if command -v ngrok &>/dev/null; then
     eval "$(ngrok completion)"
 fi
+
+# syntax higlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source ~/.config/alias.sh
 #zprof
