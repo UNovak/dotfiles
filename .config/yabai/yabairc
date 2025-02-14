@@ -7,16 +7,27 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
 # === === ===
-# Rules
+# Signals
 # === === ===
 
 yabai -m signal --add event=application_front_switched action="yabai -m window --sub-layer normal"
-
-# refocus if app is closed
-yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
-yabai -m signal --add event=window_destroyed action="/Users/urbannovak/.config/yabai/layout.zsh"
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=window_destroyed action="~/.config/yabai/scripts/auto_bsp.zsh"
+yabai -m signal --add event=display_resized action="~/.config/yabai/scripts/display_resized.zsh"
+yabai -m signal --add event=space_changed action="~/.config/yabai/scripts/space_change.zsh"
 
+
+# float unresizable
+yabai -m signal --add event=window_created app!="^Arc$" action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
+
+
+# === === ===
+# Rules
+# === === ===
+
+# float hides if managed app in front is focused
+yabai -m rule --add app=".*" sub-layer=normal
 
 # Turn off tiling by default for all apps
 yabai -m rule --add app=".*" manage=off
@@ -33,11 +44,10 @@ yabai -m rule --add app="^Miro$" manage=on
 yabai -m rule --add app="^WezTerm$" manage=on
 yabai -m rule --add app="^TradingView$" manage=on
 
-# float hides if managed app in front is focused
-yabai -m rule --add app=".*" sub-layer=normal
-
-# float unresizable
-yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | /opt/homebrew/bin/jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
+# arc spacific rules
+yabai -m rule --add label="little_arc" app="^Arc$" title="(^Space [0-9]$|^Untitled$)" subrole="AXSystemDialog" manage=on
+yabai -m rule --add app="^Arc$" title!="(^$|^Urban$|^Space [0-9]$)" manage=on
+yabai -m rule --add app="^Arc$" title="(^Urban$|^$)" manage=off
 
 # === === ===
 # Configs
@@ -68,6 +78,16 @@ yabai -m config mouse_modifier ctrl
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
+
+# make scripts executable
+chmod +x ~/.config/yabai/scripts/set_padding.zsh
+chmod +x ~/.config/yabai/scripts/auto_bsp.zsh
+chmod +x ~/.config/yabai/scripts/display_resized.zsh
+chmod +x ~/.config/yabai/scripts/space_change.zsh
+chmod +x ~/.config/yabai/scripts/arc_rules.zsh
+
+# apply rules to already open windows
+yabai -m rule --apply
 
 # === === ===
 # debugging
