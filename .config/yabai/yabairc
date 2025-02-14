@@ -46,6 +46,9 @@ yabai -m rule --add app="^Obsidian$" manage=on
 yabai -m rule --add app="^Miro$" manage=on
 yabai -m rule --add app="^WezTerm$" manage=on
 yabai -m rule --add app="^TradingView$" manage=on
+yabai -m rule --add app="^Ghostty$" manage=on
+yabai -m rule --add app="^Trae$" manage=on
+yabai -m rule --add app="^Zen Browser$" manage=on
 
 # arc spacific rules
 yabai -m rule --add label="little_arc" app="^Arc$" title="(^Space [0-9]$|^Untitled$)" subrole="AXSystemDialog" manage=on
