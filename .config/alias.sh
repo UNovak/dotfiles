@@ -11,18 +11,18 @@ alias gs="git status"
 alias glg="git lg"
 
 # eza
-alias ezac="eza --ignore-glob='Icon'$'\r'"
-alias ls="ezac"
+alias ezac='eza --no-filesize --no-symlinks --ignore-glob=".DS_Store|Icon'$'\r"'
+alias ls="ezac -F --time-style='+%Y-%m-%d %H:%M' --time=modified --smart-group --group-directories-last -b"
 alias lf="ezac --only-files"
 alias ld="ezac --only-dirs"
+alias lg="ezac --long --no-filesize --git-repos --git"
 
-# long
-alias 'ls -l'="ezac --long --accessed --smart-group"
-alias 'lf -l'="ezac --long --only-files --accessed --smart-group"
-alias 'ld -l'="ezac --long --only-dirs --accessed --smart-group"
+# eza long
+alias 'ls -l'="ezac --no-filesize --long --no-git"
+alias 'lf -l'="ezac --long --only-files --git-repos-no-status"
+alias 'ld -l'="ezac --long --only-dirs --time-style='+%Y-%m-%d %H:%M' --time=modified --smart-group --git-repos-no-status"
 
 # util shortcuts
-alias top="htop"
 alias net="speedtest-cli"
 alias c="clear"
 
