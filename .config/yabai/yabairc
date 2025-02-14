@@ -101,25 +101,3 @@ yabai -m rule --apply
 
 # view the last lines of the error log : tail -f /tmp/yabai_$USER.err.log
 # view the last lines of the debug log : tail -f /tmp/yabai_$USER.out.log
-
-# # view the event signals received by yabai
-# yabai -m signal --add event=window_created action="echo window_created | osascript -l JavaScript"
-
-# # log everything to a file
-# yabai -m signal --add event=window_created action="echo window_created >> /tmp/yabai.log"
-# yabai -m signal --add event=window_destroyed action="echo window_destroyed >> /tmp/yabai.log"
-# yabai -m signal --add event=application_launched action="echo application_launched >> /tmp/yabai.log"
-# yabai -m signal --add event=application_terminated action="echo application_terminated >> /tmp/yabai.log"
-# yabai -m signal --add event=window_focused action="echo window_focused >> /tmp/yabai.log"
-# yabai -m signal --add event=window_blurred action="echo window_blurred >> /tmp/yabai.log"
-# yabai -m signal --add event=mouse_entered action="echo mouse_entered >> /tmp/yabai.log"
-# yabai -m signal --add event=mouse_exited action="echo mouse_exited >> /tmp/yabai.log"
-# yabai -m signal --add event=space_changed action="echo space_changed >> /tmp/yabai.log"
-# yabai -m signal --add event=display_changed action="echo display_changed >> /tmp/yabai.log"
-# yabai -m signal --add event=display_added action="echo display_added >> /tmp/yabai.log"
-# yabai -m signal --add event=display_removed action="echo display_removed >> /tmp/yabai.log"
-# yabai -m signal --add event=mission_control_enter action="echo mission_control_enter >> /tmp/yabai.log"
-# yabai -m signal --add event=mission_control_exit action="echo mission_control_exit >> /tmp/yabai.log"
-# yabai -m signal --add event=bar_refresh action="echo bar_refresh >> /tmp/yabai.log"
-# yabai -m signal --add event=window_resized action="echo window_resized >> /tmp/yabai.log"
-# yabai -m signal --add event=window_moved action="echo window_moved >> /tmp/yabai.log"
