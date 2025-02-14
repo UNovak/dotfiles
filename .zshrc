@@ -26,13 +26,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
     source ~/.config/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
-# node
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-alias node='unalias node ; unalias npm ; nvm use default --silent; node $@'
-alias npm='unalias node ; unalias npm ; nvm use default --silent; npm $@'
-
-
 # brew
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
@@ -60,6 +53,11 @@ eval "$(zoxide init zsh)"
 
 # fzf
 source <(fzf --zsh)
+
+# volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+source <(volta completions zsh)
 
 # ngrok autocompletion
 if command -v ngrok &>/dev/null; then
