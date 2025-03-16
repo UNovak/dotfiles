@@ -119,7 +119,7 @@ error_symbol = '[❯](red)'
 symbol = '🍞 '
 style = 'comment'
 detect_folders = []
-detect_files = [ 'bun.lockb', 'bunfig.toml' ]
+detect_files = [ 'bun.lockb', 'bunfig.toml', 'bun.lock' ]
 version_format = 'v${raw}'
 format = '[$symbol($version )]($style) '
 
@@ -127,7 +127,7 @@ format = '[$symbol($version )]($style) '
 symbol = '󰎙 '
 style = 'comment'
 detect_folders = ['node_modules']
-detect_files = [ '!bun.lockb', '!bunfig.toml', 'package.json', '.node-version' ]
+detect_files = [ '!bun.lockb', '!bunfig.toml', '!bun.lock', 'package.json', '.node-version' ]
 detect_extensions = [ 'js', 'mjs', 'cjs', 'ts', 'mts', 'cts' ]
 version_format = 'v${raw}'
 format = '[$symbol($version )]($style) '
