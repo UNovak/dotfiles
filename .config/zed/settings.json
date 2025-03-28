@@ -1,0 +1,259 @@
+{
+  "theme": {
+    "mode": "system",
+    "light": "Tailwind Syntax",
+    "dark": "Amphetamine Dark"
+  },
+  "icon_theme": "Symbols",
+  "auto_update": true,
+  "features": {
+    "copilot": false,
+    "edit_prediction_provider": "none"
+  },
+  "edit_predictions": {
+    "enabled_in_assistant": false,
+    "disabled_globs": [".env**", "**"]
+  },
+  "assistant": {
+    "enabled": true,
+    "button": true,
+    "dock": "right",
+    "default_width": 640,
+    "default_height": 320,
+    "version": "2",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    }
+  },
+  // disabled
+  "context_servers": {},
+  "extend_comment_on_newline": false,
+  "auto_install_extensions": {},
+  "notification_panel": { "button": false },
+  "show_call_status_icon": false,
+  "use_on_type_format": false,
+  "tab_bar": { "show_nav_history_buttons": false },
+  "tasks": { "variables": {} },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+
+  // enabled
+  "cursor_blink": true,
+  "cursor_shape": "bar",
+  "load_direnv": "direct",
+  "restore_on_startup": "none",
+  "seed_search_query_from_cursor": "selection",
+  "show_whitespaces": "selection",
+  "use_smartcase_search": true,
+  "use_system_path_prompts": false,
+  "preferred_line_length": 120,
+  "soft_wrap": "none",
+  "tab_size": 2,
+  "diagnostics": {
+    "include_warnings": true,
+    "inline": {
+      "enabled": false,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    }
+  },
+
+  "file_finder": {
+    "file_icons": true,
+    "modal_max_width": "small"
+  },
+
+  // buffer
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_features": { "calt": true },
+  "buffer_font_size": 12,
+  "buffer_font_weight": 300,
+
+  // ui
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "ui_font_features": { "calt": true },
+  "ui_font_weight": 300,
+  "ui_font_size": 14,
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+    "selections_menu": false
+  },
+
+  "active_pane_modifiers": {
+    "magnification": 1.0,
+    "border_size": 0.0,
+    "inactive_opacity": 0.8
+  },
+
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "vertical_scroll_margin": 10,
+  "scrollbar": {
+    "show": "auto",
+    "axes": { "horizontal": false }
+  },
+
+  "gutter": {
+    "line_numbers": true,
+    "code_actions": false,
+    "runnables": false,
+    "folds": false
+  },
+
+  // Git
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 400,
+      "show_commit_summary": true,
+      "min_column": 90
+    }
+  },
+
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 1,
+    "coloring": "fixed",
+    "background_coloring": "disabled"
+  },
+
+  "project_panel": {
+    "button": true,
+    "indent_size": 16,
+    "auto_reveal_entries": true,
+    "auto_fold_dirs": true,
+    "show_diagnostics": "errors",
+    "indent_guides": { "show": null }
+  },
+
+  "outline_panel": {
+    "button": false,
+    "indent_guides": { "show": null },
+    "scrollbar": { "show": "never" }
+  },
+
+  "tabs": {
+    "git_status": true,
+    "close_position": "right",
+    "file_icons": true
+  },
+
+  "terminal": {
+    "shell": "system",
+    "blinking": "on",
+    "alternate_scroll": "on",
+    "button": false,
+    "font_weight": 300,
+    "cursor_shape": "bar",
+    "toolbar": { "breadcrumbs": true },
+    "env": { "EDITOR": "zed --wait" },
+    "line_height": "comfortable",
+    "detect_venv": {
+      "on": {
+        "directories": [".env", "env", ".venv", "venv"],
+        "activate_script": "default"
+      }
+    }
+  },
+
+  // File handling can use files or globs
+  // inclusions - included by Zed, even when ignored by git.
+  // exclusions - skipped during FS scan, file tree and file search. Overrides `file_scan_inclusions`.
+  "file_scan_inclusions": [".env*"],
+  "file_scan_exclusions": [
+    "**/.classpath",
+    "**/.DS_Store",
+    "**/.git",
+    "**/.hg",
+    "**/.husky",
+    "**/.jj",
+    "**/.next",
+    "**/.nuxt",
+    "**/.output",
+    "**/.settings",
+    "**/.svn",
+    "**/.tap",
+    "**/.turbo",
+    "**/.vscode",
+    "**/.vscode-test",
+    "**/CVS"
+    // "**/dist",
+    // "**/out",
+    // "**/node_modules"
+  ],
+
+  "file_types": {
+    "Plain Text": ["**/**.txt"],
+    "Dockerfile": ["Dockerfile", "Dockerfile.*"],
+    "Shell Script": [".env.*"],
+    "JSON": ["*.json"],
+    "JSONC": [
+      "bun.lock",
+      "tsconfig.json",
+      "package.json",
+      "package-lock.json",
+      "*.jsonc",
+      "**/.zed/**/*.json",
+      "**/zed/**/*.json",
+      "**/Zed/**/*.json",
+      "**/.vscode/**/*.json"
+    ]
+  },
+
+  // code complete
+  "show_edit_predictions": false,
+  "show_completion_documentation": false,
+  "auto_signature_help": false,
+  "show_signature_help_after_edits": false,
+  "show_edit_predictions_in_menu": false,
+  "inlay_hints": {
+    "enabled": false,
+    "show_type_hints": false,
+    "show_parameter_hints": true,
+    "show_other_hints": false,
+    "show_background": false,
+    "scroll_debounce_ms": 0
+  },
+
+  // formatting
+  "formatter": "auto",
+  "code_actions_on_format": {
+    "source.organizeImports": true,
+    "source.fixAll": true
+  },
+
+  // Global prettier config
+  "prettier": {
+    "allowed": true,
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": false,
+    "jsxSingleQuote": true,
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "bracketSameLine": true,
+    "endOfLine": "lf",
+    "singleAttributePerLine": false
+  },
+
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": ["class", "className", "styles", "cva()"]
+      }
+    }
+  },
+
+  "language_servers": ["!typescript-language-server", "!eslint", "..."],
+  "languages": {
+    "JSON": {
+      "formatter": "prettier"
+    }
+  }
+}
