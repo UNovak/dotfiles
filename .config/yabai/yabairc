@@ -92,6 +92,7 @@ yabai -m config mouse_drop_action swap
 # make scripts executable
 chmod +x ~/.config/yabai/scripts/padding.zsh
 chmod +x ~/.config/yabai/scripts/update.zsh
+chmod +x ~/.config/yabai/scripts/cache.zsh
 chmod +x ~/.config/yabai/scripts/auto_bsp.zsh
 chmod +x ~/.config/yabai/scripts/space_change.zsh
 chmod +x ~/.config/yabai/scripts/arc_rules.zsh
