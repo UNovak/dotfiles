@@ -1,0 +1,104 @@
+# This is Git's per-user configuration file.
+[user]
+	name = UNovak
+	email = 88665587+UNovak@users.noreply.github.com
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = zed --wait
+	excludesfile = /Users/urbannovak/.config/git/ignore
+	compression = 9
+	whitespace = error
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  renames = copies
+  colorMoved = default
+  colorMovedWS = ignore-space-change
+  context = 3
+
+[diff-so-fancy]
+	changeHunkIndicators = false
+	stripLeadingSymbols = true
+	markEmptyLines = false
+
+[color "diff"]
+  meta = normal dim
+  frag = magenta
+  context = white
+  whitespace = yellow
+  old = red
+  new = green
+  commit = normal
+  frag = normal
+  func = normal
+
+[color "diff-highlight"]
+  oldNormal = normal
+  oldHighlight = normal
+  newNormal = normal
+  newHighlight = normal
+
+[pager]
+  diff = diff-so-fancy | less
+
+[interactive]
+	diffFilter = diff-so-fancy --patch
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[alias]
+  a = add
+  ap = add --patch
+
+  c = commit --verbose
+  cm = commit -m
+
+  ca = commit --amend --verbose
+  cam = commit --amend -m
+
+  s = status
+  tree = ls-tree -r --name-only HEAD
+
+  co = checkout
+  cob = checkout -b
+
+  sw = switch
+  swc = switch -c
+
+  d = diff --output-indicator-new=' ' --output-indicator-old=' '
+  ds = diff --cached --output-indicator-new=' ' --output-indicator-old=' '
+
+  b = branch
+  branches = branch -vv
+
+  l = log --color --decorate --abbrev-commit --date=human --pretty=format:'%C(yellow)%d%C(reset) %C(red)%h%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset) %C(cyan)(%cr)%C(reset)'
+  ll = log --color --graph --decorate --abbrev-commit --date=human --pretty=format:'%C(red)%h%C(reset)%C(yellow)%d%C(reset) %C(cyan)(%cr)%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset) %n%C(white)%b%C(reset)'
+
+  # list aliases
+  aliases = "!git config -l | grep alias | cut -c 7- | sed 's/ --pretty=.*//'"
+
+[status]
+  branch = true
+  showStash = true
+  showUntrackedFiles = all
+
+[rerere]
+	enabled = true
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[advice]
+	addEmptyPathspec = false
