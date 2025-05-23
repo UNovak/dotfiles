@@ -1,8 +1,4 @@
 #zmodload zsh/zprof
-export PATH=/usr/bin:/usr/local/bin:${PATH}
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
-export XDG_CONFIG_HOME="$HOME/.config"
 
 
 # zsh
@@ -22,15 +18,15 @@ export XDG_CONFIG_HOME="$HOME/.config"
     setopt NO_CASE_GLOB
     setopt NO_BEEP
 
+# path
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="/usr/bin:/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/Applications/MEGAcmd.app/Contents/MacOS:$PATH"
 
-# brew
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/opt/homebrew/sbin:$PATH
-
-
-# bun
-export BUN_INSTALL=$HOME/.bun
-export PATH=$BUN_INSTALL/bin:$PATH
 
 # completion
 autoload -Uz compinit
@@ -45,16 +41,11 @@ fpath=(
 
 [ -s "/Users/urbannovak/.bun/_bun" ] && source "/Users/urbannovak/.bun/_bun"
 
-# Docker CLI
-export PATH="$HOME/.docker/bin:$PATH"
 
 # starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_CACHE=~/.config/starship/cache
 eval "$(starship init zsh)"
-
-# eza
-export EZA_CONFIG_DIR="$HOME/.config/eza"
 
 # zoxide
 eval "$(zoxide init zsh)"
@@ -63,13 +54,8 @@ eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 
 # volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 source <(volta completions zsh)
 
-# ngrok autocompletion
-if command -v ngrok &>/dev/null; then
-    eval "$(ngrok completion)"
 fi
 
 # syntax higlighting
