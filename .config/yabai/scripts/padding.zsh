@@ -2,7 +2,7 @@
 # this script runs whenever a display is resized
 
 # call a script to adjust padding variables
-source ~/.config/yabai/scripts/set_padding.zsh
+source ~/.config/yabai/scripts/update.zsh
 
 # get index of all spaces using stack layout
 stacked_spaces=( $(yabai -m query --spaces --display | jq -re '.[] | select( .type == "stack" ) | .index ') )
