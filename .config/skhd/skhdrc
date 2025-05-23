@@ -32,6 +32,7 @@ shift + lcmd + lalt + lctrl - s : yabai -m window --space 2
 shift + lcmd + lalt + lctrl - d : yabai -m window --space 3
 shift + lcmd + lalt + lctrl - f : yabai -m window --space 4
 shift + lcmd + lalt + lctrl - g : yabai -m window --space 5
+shift + lcmd + lalt + lctrl - h : yabai -m window --space 6
 
 # === === ===
 # layout toggles
@@ -40,6 +41,7 @@ shift + lcmd + lalt + lctrl - g : yabai -m window --space 5
 lcmd + lalt + lctrl - x : yabai -m space --mirror x-axis # up|down
 lcmd + lalt + lctrl - z : yabai -m space --mirror y-axis # left|right
 lcmd + lalt + lctrl - c : yabai -m window --toggle split # split orientation
+lcmd + lalt + lctrl - r : yabai -m space --rotate 270
 
 # === === ===
 # spaces
@@ -52,6 +54,10 @@ lcmd + lalt + lctrl - d : yabai -m space --focus 3
 lcmd + lalt + lctrl - f : yabai -m space --focus 4
 lcmd + lalt + lctrl - g : yabai -m space --focus 5
 lcmd + lalt + lctrl - h : yabai -m space --focus 6
+
+# create and destroy spaces
+lalt + lctrl - n : yabai -m space --create
+lalt + lctrl - w : yabai -m space --destroy
 
 # set layout for active space
 lcmd + lalt + lctrl - q : /Users/urbannovak/.config/skhd/scripts/layout_toggle.zsh
