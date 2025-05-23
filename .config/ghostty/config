@@ -3,9 +3,7 @@
 # === === ===
 
 # === === theme === ===
-# theme = dark:tokyonight_night,light:tokyonight
-# theme = dark:catppuccin-mocha,light:catppuccin-macchiato
-theme = sandstorm_dark
+theme = dark:Vesper,light:Vesper
 
 # === === font === ===
 font-family = JetBrainsMono NFM Regular
@@ -17,12 +15,8 @@ font-family-bold-italic = JetBrainsMono NFM Bold Italic
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = hidden
 
-# bg
-background-opacity = 1.0
-background-blur-radius = 250
-auto-update-channel = tip
-
-cursor-style = block
+cursor-style = block_hollow
+cursor-opacity = 0.8
 shell-integration-features = no-cursor
 
 # padding
@@ -37,6 +31,8 @@ confirm-close-surface = false
 shell-integration = zsh
 title-report = true
 macos-option-as-alt = true
+macos-secure-input-indication = false
+auto-update-channel = stable
 
 # source keybindings
 config-file = keybinds/config
