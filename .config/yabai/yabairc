@@ -44,6 +44,7 @@ yabai -m rule --add app="^Arc$" manage=on
 yabai -m rule --add app="^Code$" manage=on
 yabai -m rule --add app="^Zed$" manage=on
 yabai -m rule --add app="^IntelliJ IDEA$" manage=on
+yabai -m rule --add app="^Preview$" manage=on
 yabai -m rule --add app="^Safari$" manage=on
 yabai -m rule --add app="^Figma$" manage=on
 yabai -m rule --add app="^Obsidian$" manage=on
