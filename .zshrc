@@ -1,23 +1,5 @@
 #zmodload zsh/zprof
 
-
-# zsh
-    # history
-    HISTFILE=~/.zsh/.zsh_history
-    setopt HIST_IGNORE_ALL_DUPS
-    setopt SHARE_HISTORY
-    setopt APPEND_HISTORY
-    setopt HIST_EXPIRE_DUPS_FIRST
-    setopt HIST_FIND_NO_DUPS
-    setopt HIST_REDUCE_BLANKS
-    SAVEHIST=5000
-    HISTSIZE=2000
-
-    # settings
-    setopt AUTO_CD
-    setopt NO_CASE_GLOB
-    setopt NO_BEEP
-
 # path
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/usr/bin:/usr/local/bin:$PATH"
@@ -27,6 +9,21 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/Applications/MEGAcmd.app/Contents/MacOS:$PATH"
 
+# zsh history
+HISTFILE="$XDG_CACHE_HOME/zsh/zsh.hist"
+setopt HIST_IGNORE_ALL_DUPS
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+
+# shell options
+setopt CSH_NULL_GLOB
+setopt INTERACTIVE_COMMENTS
+setopt NO_BEEP
+setopt NO_CORRECT
+unsetopt AUTO_CD
 
 # completion
 autoload -Uz compinit
