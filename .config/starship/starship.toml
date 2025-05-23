@@ -39,9 +39,10 @@ $cmd_duration\
 symbol = " "
 
 [sudo]
-style = 'green'
+style = 'red'
 symbol = ' '
 format = '[$symbol]($style)'
+disabled = false
 
 [username]
 style_user = 'blue'
@@ -122,16 +123,16 @@ error_symbol = '[❯](red)'
 
 [bun]
 symbol = '🍞 '
-style = 'comment'
 detect_folders = []
 detect_files = [ 'bun.lockb', 'bunfig.toml', 'bun.lock' ]
+style = 'gray'
 version_format = 'v${raw}'
 format = '[$symbol($version )]($style) '
 
 [nodejs]
 symbol = '󰎙 '
-style = 'comment'
 detect_folders = ['node_modules']
+style = 'gray'
 detect_files = [ '!bun.lockb', '!bunfig.toml', '!bun.lock', 'package.json', '.node-version' ]
 detect_extensions = [ 'js', 'mjs', 'cjs', 'ts', 'mts', 'cts' ]
 version_format = 'v${raw}'
@@ -144,19 +145,19 @@ format = '[< $duration >]($style) '
 
 [container]
 symbol = '📦 '
-style = 'comment'
+style = 'gray'
 format = '[($symbol \[$name\)] ]($style) '
 
 [docker_context]
 symbol = '🐳 '
-style = 'comment'
+style = 'gray'
 detect_folders = []
 detect_files = [ 'docker-compose.yml', 'docker-compose.yaml', 'Dockerfile' ]
 format = '[$symbol($context )]($style) '
 
 [deno]
 symbol = '🦕 '
-style = 'comment'
+style = 'gray'
 detect_folders = []
 detect_files = ['deno.json', 'deno.jsonc', 'mod.ts', 'mod.js', 'deps.ts', 'deps.js']
 version_format = 'v${raw}'
@@ -164,7 +165,7 @@ format = '[$symbol($version )]($style) '
 
 [golang]
 symbol = ' '
-style = 'comment'
+style = 'gray'
 detect_folders = []
 detect_extensions = ['go']
 detect_files = [ 'go.mod', 'go.sum', 'go.work', 'glide.yaml', 'Gopkg.yml', 'Gopkg.lock', '.go-version' ]
@@ -174,7 +175,7 @@ format = '[$symbol($version )]($style) '
 
 [java]
 symbol = '☕️ '
-style = 'comment'
+style = 'gray'
 detect_folders = []
 detect_extensions = [ 'java', 'class', 'gradle', 'jar', 'cljs', 'cljc' ]
 detect_files = [ 'pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc' ]
@@ -183,7 +184,7 @@ format = '[$symbol($version )]($style) '
 
 [ruby]
 symbol = '💎 '
-style = 'comment'
+style = 'gray'
 detect_extensions = [ 'rb' ]
 detect_variables = [ 'RUBY_VERSION', 'RBENV_VERSION' ]
 version_format = 'v${raw}'
@@ -191,7 +192,7 @@ format = '[$symbol($version )]($style) '
 
 [rust]
 symbol = '⚙️ '
-style = 'comment'
+style = 'gray'
 detect_extensions = [ 'rs' ]
 detect_files = [ 'Cargo.toml' ]
 version_format = 'v${raw}'
@@ -199,14 +200,14 @@ format = '[$symbol($version )]($style) '
 
 [solidity]
 symbol = ' '
-style = 'comment'
+style = 'gray'
 detect_extensions = [ 'sol' ]
 version_format = 'v${raw}'
 format = '[$symbol($version )]($style) '
 
 [swift]
 symbol = ' '
-style = 'comment'
+style = 'gray'
 detect_extensions = [ 'rswift' ]
 detect_files = [ 'Package.swift' ]
 version_format = 'v${raw}'
@@ -214,7 +215,7 @@ format = '[$symbol($version )]($style) '
 
 [dart]
 symbol = '🎯 '
-style = 'comment'
+style = 'gray'
 detect_extensions = [ 'dart' ]
 detect_files = [ 'pubspec.yaml', 'pubspec.yml', 'pubspec.lock' ]
 detect_folders = [ '.dart_tool' ]
