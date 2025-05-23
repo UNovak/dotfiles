@@ -183,17 +183,19 @@
     "**/.turbo",
     "**/.vscode",
     "**/.vscode-test",
-    "**/CVS"
+    "**/CVS",
     // "**/dist",
     // "**/out",
-    // "**/node_modules"
+    "**/node_modules"
   ],
 
   "file_types": {
     "Plain Text": ["**/**.txt"],
     "Dockerfile": ["Dockerfile", "Dockerfile.*"],
     "Shell Script": [".env.*"],
+    "XML": ["*.plist"],
     "JSON": ["*.json"],
+    "Git Config": ["**/.gitconfig", "**/.git/config", "**/git/config"],
     "JSONC": [
       "bun.lock",
       "tsconfig.json",
@@ -255,6 +257,33 @@
   "languages": {
     "JSON": {
       "formatter": "prettier"
-    }
+    },
+    "Plain Text": {
+      "prettier": { "allowed": false }
+    },
+    "Shell Script": {
+      "format_on_save": "on",
+      "prettier": { "allowed": false },
+      "formatter": {
+        "external": {
+          "command": "shfmt",
+          "arguments": ["--filename", "{buffer_path}", "--indent", "2"]
+        }
+      }
+    },
+    "Lua": {
+      "format_on_save": "on",
+      "prettier": { "allowed": false },
+      "formatter": "language_server",
+      "inlay_hints": {
+        "enabled": true,
+        "show_type_hints": true,
+        "show_parameter_hints": false,
+        "show_other_hints": false
+      }
+    },
+    "Git Config": { "prettier": { "allowed": false } },
+    "Git Ignore": { "prettier": { "allowed": false } },
+    "Git Commit": { "prettier": { "allowed": false } }
   }
 }
