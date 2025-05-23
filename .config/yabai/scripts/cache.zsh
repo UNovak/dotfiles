@@ -1,17 +1,20 @@
 #!/bin/zsh
 # a set of functions for manipulating yabai cache
-file="$YABAI_CACHE_DIR/values.cache.json"
+
+# Ensure cache directory exists
+CACHE_DIR="$HOME/.cache/yabai"
+CACHE="$CACHE_DIR/values.json"
 
 # create an empty cache
 function cache_init {
-  mkdir -p "$YABAI_CACHE_DIR"
-  echo '{}' >$file
+  mkdir -p "$CACHE_DIR"
+  echo '{}' >$CACHE
 }
 
 # check if cache exists
 # return 0 if yes else return 1
 function validate_cache {
-  [[ -f "$file" ]] && jq -e . "$file" >/dev/null 2>&1
+  [[ -f "$CACHE" ]] && jq -e . "$CACHE" >/dev/null 2>&1
 }
 
 # reads the current values from the cache
@@ -23,11 +26,11 @@ function validate_cache {
 # returns:
 #   0 | 1
 function read_cache {
-  if [[ -f "$file" ]]; then
-    cached_width=$(jq -r '.cached_width' "$file")
-    cached_height=$(jq -r '.cached_height' "$file")
-    YABAI_BSP_PADDING=$(jq -r '.bsp_padding' "$file")
-    YABAI_STACK_PADDING=$(jq -r '.stack_padding' "$file")
+  if [[ -f "$CACHE" ]]; then
+    cached_width=$(jq -r '.cached_width' "$CACHE")
+    cached_height=$(jq -r '.cached_height' "$CACHE")
+    YABAI_BSP_PADDING=$(jq -r '.bsp_padding' "$CACHE")
+    YABAI_STACK_PADDING=$(jq -r '.stack_padding' "$CACHE")
     return 0
   fi
   return 1
@@ -51,5 +54,5 @@ function write_cache {
       cached_height: $height,
       bsp_padding: $bsp,
       stack_padding: $stack
-      }' >$file || return 1
+      }' >$CACHE || return 1
 }

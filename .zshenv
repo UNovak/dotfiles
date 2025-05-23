@@ -13,7 +13,6 @@ export EZA_CONFIG_DIR="$XDG_CONFIG_HOME/eza"
 export GOKU_EDN_CONFIG_FILE="$XDG_CONFIG_HOME/karabiner/karabiner.edn"
 export LESSHISTFILE="-"
 export VOLTA_HOME="$HOME/.volta"
-export YABAI_CACHE_DIR="$XDG_CACHE_HOME/yabai"
 
 # homebrew options
 export HOMEBREW_COLOR=1
