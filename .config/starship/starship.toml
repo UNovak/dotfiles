@@ -49,6 +49,7 @@ style_user = 'blue'
 style_root = 'red'
 format = '[$user]($style) '
 show_always = true
+aliases = { "urbannovak" = "you" }
 
 [hostname]
 ssh_only = true
@@ -63,16 +64,19 @@ style = 'purple'
 format = '[$localipv4]($style) '
 
 [directory]
-truncation_length = 5
-style = 'purple'
-read_only = ''
-read_only_style = ''
-truncation_symbol = '../'
+truncation_symbol = '.../'
 home_symbol = '~'
-format = '[$path]($style)[$read_only]($read_only_style) '
+truncation_length = 3
+style = 'purple'
+format = '[$read_only]($read_only_style)[$path]($style) '
+truncate_to_repo = true
+read_only_style = 'red'
+read_only = ''
+
 
 [directory.substitutions]
 'src/components' = 'components'
+'packages/' = ''
 
 [git_branch]
 symbol = ' '
