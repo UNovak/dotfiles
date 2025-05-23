@@ -122,24 +122,24 @@ cherry_pick = '🍒PICKING'
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 
 [character]
-success_symbol = '[❯](green)'
-error_symbol = '[❯](red)'
+success_symbol = '[ ▶︎](dimmed green) '
+error_symbol = '[ ▶︎](dimmed red) '
 
 [bun]
 symbol = '🍞 '
-detect_folders = []
-detect_files = [ 'bun.lockb', 'bunfig.toml', 'bun.lock' ]
 style = 'gray'
+detect_folders = ['node_modules']
+detect_files = [ 'bun.lockb', 'bunfig.toml', 'bun.lock', 'package.json' ]
 version_format = 'v${raw}'
 format = '[$symbol($version )]($style) '
 
 [nodejs]
 symbol = '󰎙 '
-detect_folders = ['node_modules']
 style = 'gray'
+detect_folders = ['!.nuxt', 'node_modules']
 detect_files = [ '!bun.lockb', '!bunfig.toml', '!bun.lock', 'package.json', '.node-version' ]
 detect_extensions = [ 'js', 'mjs', 'cjs', 'ts', 'mts', 'cts' ]
-version_format = 'v${raw}'
+version_format = 'v${major}'
 format = '[$symbol($version )]($style) '
 
 [cmd_duration]
