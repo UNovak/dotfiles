@@ -11,6 +11,7 @@ $directory\
 $git_branch\
 $git_commit\
 $git_status\
+$git_state\
 $fill\
 $bun\
 $nodejs\
@@ -74,26 +75,46 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 
 [git_branch]
 symbol = ' '
-style = 'cyan'
+style = 'yellow dimmed'
 format = '[$symbol$branch(:$remote_branch)]($style) '
+ignore_branches = ['master', 'main']
+only_attached = true
+
+[git_commit]
+commit_hash_length = 7
+style = 'yellow dimmed'
+format = '[\($hash$tag\)]($style) '
+only_detached = true
+tag_disabled = true
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "red"
-stashed = "!"
-ahead = "⇡"
-behind = "⇣"
-up_to_date = "✓"
-diverged = "⇕"
-conflicted = "="
-deleted = "D"
-renamed = "R"
-modified = "!"
-staged = '[++\($count\)](green)'
-untracked = "?"
-typechanged = ""
+format = '([\[ $all_status$ahead_behind \]]($style) )'
+style = 'red'
+ahead = '⇡'
+behind = '⇣'
+up_to_date = ''
+diverged = '⇕'
+conflicted = '='
+deleted = 'D'
+renamed = '»'
+stashed = '△'
+modified = '!'
+staged = '[+\($count\)](green) '
+untracked = '?'
+typechanged = ''
 ignore_submodules = false
 disabled = false
+
+[git_state]
+revert = ''
+am = ''
+am_or_rebase = ''
+bisect = 'B'
+rebase = 'R'
+merge = 'M'
+style = 'gray'
+cherry_pick = '🍒PICKING'
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
 
 [character]
 success_symbol = '[❯](green)'
