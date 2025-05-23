@@ -22,20 +22,27 @@ export XDG_CONFIG_HOME="$HOME/.config"
     setopt NO_CASE_GLOB
     setopt NO_BEEP
 
-    # autocomplete
-    source ~/.config/zsh-autosuggestions/zsh-autosuggestions.zsh
-    fpath=(~/.zsh/completions $fpath)
-
 
 # brew
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 
 # bun
 export BUN_INSTALL=$HOME/.bun
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# completion
+autoload -Uz compinit
+[ ! "$(find ~/.zcompdump -mtime 1)" ] || compinit
+compinit -C
+
+fpath=(
+  "$HOME/.zsh/completions"
+  "/opt/homebrew/share/zsh-completions"
+  $fpath
+)
+
 [ -s "/Users/urbannovak/.bun/_bun" ] && source "/Users/urbannovak/.bun/_bun"
 
 # Docker CLI
