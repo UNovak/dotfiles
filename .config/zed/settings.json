@@ -1,9 +1,10 @@
 {
   "theme": {
     "mode": "system",
-    "light": "Tailwind Syntax",
+    "light": "Amphetamine Dark",
     "dark": "Amphetamine Dark"
   },
+
   "icon_theme": "Symbols",
   "auto_update": true,
   "features": {
