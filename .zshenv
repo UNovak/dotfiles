@@ -1,3 +1,4 @@
+# zsh
 SHELL_SESSIONS_DISABLE=1
 SKIP_GLOBAL_COMPINIT=1
 
@@ -14,9 +15,8 @@ export LESSHISTFILE="-"
 export VOLTA_HOME="$HOME/.volta"
 export YABAI_CACHE_DIR="$XDG_CACHE_HOME/yabai"
 
+# homebrew options
 export HOMEBREW_COLOR=1
 export HOMEBREW_LOGS='/tmp/homebrew.logs'
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
-
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters

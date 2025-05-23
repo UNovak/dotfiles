@@ -54,8 +54,7 @@ if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
 fi
 
-# syntax higlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+# source shell aliases
 source ~/.config/alias.sh
+
 #zprof
