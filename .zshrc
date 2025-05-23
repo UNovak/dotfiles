@@ -48,10 +48,10 @@ if command -v volta &>/dev/null; then source <(volta completions zsh 2>/dev/null
 if command -v fzf &>/dev/null; then source <(fzf --zsh 2>/dev/null); fi
 
 # starship
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-export STARSHIP_CACHE=~/.config/starship/cache
-eval "$(starship init zsh)"
-
+if command -v starship &>/dev/null; then
+  export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+  export STARSHIP_CACHE="$XDG_CACHE_HOME/starship/cache"
+  eval "$(starship init zsh)"
 fi
 
 # syntax higlighting
