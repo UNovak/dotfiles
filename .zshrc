@@ -36,22 +36,21 @@ fpath=(
   $fpath
 )
 
+# tools
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(zoxide init zsh)"
+source ~/.config/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -s "/Users/urbannovak/.bun/_bun" ] && source "/Users/urbannovak/.bun/_bun"
 
+# tool completions (safe-loaded)
+if command -v ngrok &>/dev/null; then eval "$(ngrok completion 2>/dev/null)"; fi
+if command -v volta &>/dev/null; then source <(volta completions zsh 2>/dev/null); fi
+if command -v fzf &>/dev/null; then source <(fzf --zsh 2>/dev/null); fi
 
 # starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_CACHE=~/.config/starship/cache
 eval "$(starship init zsh)"
-
-# zoxide
-eval "$(zoxide init zsh)"
-
-# fzf
-source <(fzf --zsh)
-
-# volta
-source <(volta completions zsh)
 
 fi
 
