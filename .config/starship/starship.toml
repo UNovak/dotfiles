@@ -26,8 +26,8 @@ $solidity\
 $swift\
 $dart\
 $container\
-$line_break\
 $time\
+$line_break\
 $character\
 """
 
@@ -223,8 +223,8 @@ version_format = 'v${raw}'
 format = '[$symbol($version )]($style) '
 
 [time]
-disabled = true
-style = "comment"
-format = '[ $time]($style) '
-time_format = '%T'
+disabled = false
+style = 'gray'
+format = '[$time]($style) '
+time_format = '%_I:%M %P'
 utc_time_offset = 'local'
