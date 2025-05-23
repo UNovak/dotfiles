@@ -1,5 +1,5 @@
 # === === ===
-# window managment
+# window managment
 # === === ===
 
 # Balance all managed windows
@@ -24,7 +24,7 @@ lcmd + lalt + lctrl - 0x21 : yabai -m window --focus "$(yabai -m query --windows
 
 # swap managed windows in space between each other
 shift + lcmd + lalt + lctrl - 0x1E : /Users/urbannovak/.config/skhd/scripts/window_swap_clockwise.zsh
-shift +  lcmd + lalt + lctrl - 0x21 : /Users/urbannovak/.config/skhd/scripts/window_swap_counter.zsh
+shift + lcmd + lalt + lctrl - 0x21 : /Users/urbannovak/.config/skhd/scripts/window_swap_counter.zsh
 
 # throw window to space
 shift + lcmd + lalt + lctrl - a : yabai -m window --space 1
