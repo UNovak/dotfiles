@@ -8,6 +8,8 @@ export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/Applications/MEGAcmd.app/Contents/MacOS:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/Users/urbannovak/.local/bin:$PATH"
 
 # zsh history
 HISTFILE="$XDG_CACHE_HOME/zsh/zsh.hist"
