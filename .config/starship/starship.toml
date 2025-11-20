@@ -133,6 +133,16 @@ detect_files = [ 'bun.lockb', 'bunfig.toml', 'bun.lock', 'package.json' ]
 version_format = 'v${raw}'
 format = '[$symbol($version )]($style) '
 
+[python]
+# python_binary = 'python3'
+symbol = '🐍 '
+style = 'gray'
+detect_files = ['.python-version', 'Pipfile', '__init__.py', 'pyproject.toml', 'requirements.txt', 'setup.py', 'tox.ini']
+pyenv_prefix = '.venv'
+pyenv_version_name = false
+version_format = 'v${raw}'
+format = '[${symbol}($version )(\($virtualenv\) )]($style)'
+
 [nodejs]
 symbol = '󰎙 '
 style = 'gray'
@@ -175,7 +185,6 @@ detect_extensions = ['go']
 detect_files = [ 'go.mod', 'go.sum', 'go.work', 'glide.yaml', 'Gopkg.yml', 'Gopkg.lock', '.go-version' ]
 version_format = 'v${raw}'
 format = '[$symbol($version )]($style) '
-
 
 [java]
 symbol = '☕️ '
