@@ -12,13 +12,16 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/Users/urbannovak/.local/bin:$PATH"
 
 # zsh history
-HISTFILE="$XDG_CACHE_HOME/zsh/zsh.hist"
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
+
+# history file
+HISTFILE="$XDG_CACHE_HOME/zsh/zsh.hist"
+mkdir -p "$(dirname "$HISTFILE")"
 
 # shell options
 setopt CSH_NULL_GLOB
