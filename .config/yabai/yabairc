@@ -56,6 +56,10 @@ yabai -m rule --add app="^Ghostty$" manage=on
 yabai -m rule --add app="^Trae$" manage=on
 yabai -m rule --add app="^Zen Browser$" manage=on
 
+# disable opacity for games
+yabai -m rule --add title="^Minecraft*" opacity="1.0"
+yabai -m rule --add title="^SkyrimSE*" opacity="1.0"
+
 # arc spacific rules
 yabai -m rule --add label="little_arc" app="^Arc$" title="(^Space [0-9]$|^Untitled$)" subrole="AXSystemDialog" manage=on
 yabai -m rule --add app="^Arc$" title!="(^$|^Urban$|^Space [0-9]$)" manage=on
