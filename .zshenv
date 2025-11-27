@@ -1,4 +1,5 @@
 # zsh
+# shellcheck disable=SC2034
 SHELL_SESSIONS_DISABLE=1
 SKIP_GLOBAL_COMPINIT=1
 
