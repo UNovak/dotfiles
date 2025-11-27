@@ -18,6 +18,7 @@ export LESSHISTFILE="-"
 export VOLTA_HOME="$HOME/.volta"
 
 # homebrew options
+export HOMEBREW_BUNDLE_FILE_GLOBAL="$XDG_CONFIG_HOME/homebrew/Brewfile"
 export HOMEBREW_COLOR=1
 export HOMEBREW_LOGS="/tmp/homebrew.logs"
 export HOMEBREW_NO_AUTO_UPDATE=1
